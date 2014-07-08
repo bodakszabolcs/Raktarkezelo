@@ -3,118 +3,90 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Raktarkezelo.DataBase;
 
 namespace Raktarkezelo.Product
 {
     class Phone
     {
-        public Attribute Azonosito;
-        public Attribute Kategoria;
-        public Attribute Marka;
-        public Attribute Szin;
-        public Attribute Fuggoseg;
-        public Attribute Vetel;
-        public Attribute Eladas;
-        public Attribute Veteli_ar;
-        public Attribute Eladasi_ar;
-        public Attribute Akcios_ar;
-        public Attribute Statusz;
-        public Attribute BelsoMegjegyzes;
-        public Attribute KulsoMegjegyzes;
-        public Attribute Garancia;
-        public Attribute Garancia_Osszeg;
-        public Attribute Tulajdonos;
-        public Attribute Web;
+        public string Id;
+        public string Azonosito;
+        public string Kategoria;
+        public string Marka;
+        public string Szin;
+        public string Fuggoseg;
+        public string Vetel;
+        public string Eladas;
+        public string Veteli_ar;
+        public string Allapot;
+        public string Eladasi_ar;
+        public string Akcios_ar;
+        public string Afa;
+        public string Statusz;
+        public string BelsoMegjegyzes;
+        public string KulsoMegjegyzes;
+        public string Garancia;
+        public string Garancia_Osszeg;
+        public string Tulajdonos;
+        public string Felhasznalo;
+        public string Web;
+        public string Del;
         
-        public Phone(string azon,string kategoria,string marka,string szin,string fuggoseg, int akcios,int veteli_ar, int eladasi_ar,string statusz,string belsomegj,string kulsomegj,string garancia,int garancia_ar,string tulaj, string web)
+        public Phone(string id,string azon,string kategoria,string marka,string szin,string fuggoseg,string allapot, string akcios,string veteli_ar,string afa, string eladasi_ar,string statusz,string belsomegj,string kulsomegj,string garancia,int garancia_ar,string tulaj,string felhasznalo, string web,string del)
         {
-            Azonosito.AttributeName = "tel_imei";
-            Azonosito.Value = azon;
-            Kategoria.AttributeName = "tel_cat";
-            Kategoria.Value = kategoria;
-            Marka.AttributeName = "tel_marka";
-            Marka.Value = marka;
-            Szin.AttributeName = "tel_szin";
-            Szin.Value = szin;
-            Fuggoseg.AttributeName = "tel_fuggo";
-            Fuggoseg.Value = fuggoseg;
-            Vetel.AttributeName = "tel_vetel";
-            Vetel.Value = "CURDATE()";
-            Eladas.AttributeName = "tel_eladas";
-            Eladas.Value = " null";
-            Veteli_ar.AttributeName = "tel_eladasi_ar";
-            Veteli_ar.Value = (veteli_ar).ToString();
-            Eladasi_ar.AttributeName = "tel_eladasi_ar";
-            Eladasi_ar.Value = "null";
-            Statusz.AttributeName = "tel_statusz";
-            Statusz.Value = statusz;
-            BelsoMegjegyzes.AttributeName = "tel_belso_megj";
-            BelsoMegjegyzes.Value = belsomegj;
-            KulsoMegjegyzes.AttributeName = "tel_kulso_megj";
-            KulsoMegjegyzes.Value = kulsomegj;
-            Garancia.AttributeName = "tel_garancia";
-            Garancia.Value = garancia;
-            Garancia_Osszeg.AttributeName = "tel_garancia_ar";
-            Garancia_Osszeg.Value = (garancia_ar).ToString();
-            Tulajdonos.AttributeName = "tel_tulaj";
-            Tulajdonos.Value = tulaj;
-            Web.AttributeName = "tel_web";
-            Web.Value = web;
+            Id = id;
+            Azonosito = azon;
+            Kategoria = kategoria;
+            Marka = marka;
+            Szin = szin;
+            Fuggoseg = fuggoseg;
+            Allapot = allapot;
+            Vetel= "CURDATE()";
+            Eladas = " null";
+            Veteli_ar = veteli_ar;
+            Eladasi_ar = eladasi_ar;
+            Akcios_ar = akcios;
+            Afa = afa;
+            Statusz = statusz;
+            BelsoMegjegyzes = belsomegj;
+            KulsoMegjegyzes = kulsomegj;
+            Garancia = garancia;
+            Garancia_Osszeg = (garancia_ar).ToString();
+            Tulajdonos = tulaj;
+            Felhasznalo = felhasznalo;
+            Web = web;
+            Del = del;
 
         }
-        public Phone()
+        public void Insert()
         {
-            Azonosito.AttributeName = "tel_imei";
-            Azonosito.Value = null;
-            Kategoria.AttributeName = "tel_cat";
-            Kategoria.Value = null;
-            Marka.AttributeName = "tel_marka";
-            Marka.Value = null;
-            Szin.AttributeName = "tel_szin";
-            Szin.Value = null;
-            Fuggoseg.AttributeName = "tel_fuggo";
-            Fuggoseg.Value = null;
-            Vetel.AttributeName = "tel_vetel";
-            Vetel.Value = "CURDATE()";
-            Eladas.AttributeName = "tel_eladas";
-            Eladas.Value = " null";
-            Veteli_ar.AttributeName = "tel_eladasi_ar";
-            Veteli_ar.Value = null;
-            Eladasi_ar.AttributeName = "tel_eladasi_ar";
-            Eladasi_ar.Value = null;
-            Statusz.AttributeName = "tel_statusz";
-            Statusz.Value = null;
-            BelsoMegjegyzes.AttributeName = "tel_belso_megj";
-            BelsoMegjegyzes.Value = null;
-            KulsoMegjegyzes.AttributeName = "tel_kulso_megj";
-            KulsoMegjegyzes.Value = null;
-            Garancia.AttributeName = "tel_garancia";
-            Garancia.Value = null;
-            Garancia_Osszeg.AttributeName = "tel_garancia_ar";
-            Garancia_Osszeg.Value = null;
-            Tulajdonos.AttributeName = "tel_tulaj";
-            Tulajdonos.Value = null;
-            Web.AttributeName = "tel_web";
-            Web.Value =null;
+            MySQLDB db = new MySQLDB();
+            db.Insert("INSERT INTO shop_phone VALUES('','"+Azonosito+"','"+Kategoria+"','"+Marka+"','"+Szin+"','"+Fuggoseg+"','"+Allapot+"','"+Veteli_ar+"','"+Eladasi_ar+"','"+Akcios_ar+"','"+Statusz+"','"+BelsoMegjegyzes+"','"+KulsoMegjegyzes+"','"+Garancia+"','"+Garancia_Osszeg+"','"+Tulajdonos+"','"+Web+"',NOW(),NOW(),'"+Felhasznalo+"','"+Felhasznalo+"','0') ");
+        }
+        public void Update()
+        {
+            MySQLDB db = new MySQLDB();
+            db.Update("UPDATE shop_phone set tel_imei='"+Azonosito+"',tel_cat='"+Kategoria+"',tel_marka='"+Marka+"',tel_szin='"+Szin+"',tel_fuggo='"+Fuggoseg+"',tel_allapot='"+Allapot+"',tel_veteli_ar='"+Veteli_ar+"',tel_eladasi_ar='"+Eladasi_ar+"',tel_akcios_ar='"+Akcios_ar+"',tel_afa='"+Afa+"',tel_statusz='"+Statusz+"',tel_belso_megj='"+BelsoMegjegyzes+"',tel_kulso_megj='"+KulsoMegjegyzes+"',tel_web='"+Web+"',tel_lastup=NOW(),tel_user_update='"+Felhasznalo+"', tel_del='"+Del+"' where tel_id='"+Id+"'");
+        
+        }
+        public void Delete()
+        {
+            MySQLDB db = new MySQLDB();
+            db.Delete("UPDATE shop_phone set tel_del='1', tel_lastup=NOW(), tel_user_updated='" + Felhasznalo + "',tel_statusz='TÖRÖLT' ");
+            
+        }
 
+        public void Sell()
+        {
+            MySQLDB db = new MySQLDB();
+            db.Update("UPDATE shop_phone SET tel_eladasi_ar_'"+Eladasi_ar+"',tel_garancia='"+Garancia+"', tel_garancia_ar='"+Garancia_Osszeg+"', tel_web='0',tel_user_updated='"+Felhasznalo+"', te_statusz='Eladva'");
+        }
+        public void Send()
+        {
+            
         }
 
 
     }
-    class Attribute
-    {
-       public string AttributeName;
-       public string Value;
-
-       public Attribute()
-       {
-           AttributeName = null;
-           Value = null;
-       }
-       public Attribute(string name)
-       {
-           AttributeName = name;
-           Value = null;
-       }
-    }
+   
 }

@@ -20,7 +20,7 @@ namespace Raktarkezelo
         {
             InitializeComponent();
         }
-        Raktarkezelo main = new Raktarkezelo();
+        ShopForm main = new ShopForm();
            
         private void Login_Load(object sender, EventArgs e)
         {

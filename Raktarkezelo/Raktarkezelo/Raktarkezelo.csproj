@@ -145,6 +145,12 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Product\Add_product.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Product\Add_product.Designer.cs">
+      <DependentUpon>Add_product.cs</DependentUpon>
+    </Compile>
     <Compile Include="Product\Product.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -155,6 +161,13 @@
       <DependentUpon>Raktarkezelo.cs</DependentUpon>
     </Compile>
     <Compile Include="Security\CryptoLib.cs" />
+    <Compile Include="Shops\ShopForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Shops\ShopForm.Designer.cs">
+      <DependentUpon>ShopForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Shops\Shop.cs" />
     <Compile Include="User\User.cs" />
     <Compile Include="User\UserSettings.cs">
       <SubType>Form</SubType>
@@ -164,6 +177,9 @@
     </Compile>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Product\Add_product.resx">
+      <DependentUpon>Add_product.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -177,6 +193,9 @@
     </Compile>
     <EmbeddedResource Include="Raktarkezelo.resx">
       <DependentUpon>Raktarkezelo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shops\ShopForm.resx">
+      <DependentUpon>ShopForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User\UserSettings.resx">
       <DependentUpon>UserSettings.cs</DependentUpon>
@@ -271,6 +290,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Users_delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shop.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_phone.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
