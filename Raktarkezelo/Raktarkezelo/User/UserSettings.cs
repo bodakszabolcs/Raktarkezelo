@@ -14,7 +14,7 @@ using Raktarkezelo.Security;
 
 namespace Raktarkezelo.User
 {
-    public partial class UserSettings : Office2007Form
+    public partial class UserSettings : MetroForm
     {
         public UserSettings()
         {
@@ -35,6 +35,11 @@ namespace Raktarkezelo.User
                 conn.Insert("Insert into users values('','" + textBoxX1.Text + "','" + cl.MD5Hash(textBoxX2.Text) + "')");
             }
             
+        }
+
+        private void buttonX2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

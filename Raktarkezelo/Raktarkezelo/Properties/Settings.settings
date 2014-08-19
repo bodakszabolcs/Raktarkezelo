@@ -22,5 +22,14 @@
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">server=localhost;user id=root;database=raktar2</Value>
     </Setting>
+    <Setting Name="e" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">White</Value>
+    </Setting>
+    <Setting Name="a" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="b" Type="System.Windows.Forms.DataGridViewCellBorderStyle" Scope="User">
+      <Value Profile="(Default)">Raised</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

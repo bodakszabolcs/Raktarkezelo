@@ -71,5 +71,41 @@ namespace Raktarkezelo.Properties {
                 return ((string)(this["raktar2ConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("White")]
+        public global::System.Drawing.Color e {
+            get {
+                return ((global::System.Drawing.Color)(this["e"]));
+            }
+            set {
+                this["e"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool a {
+            get {
+                return ((bool)(this["a"]));
+            }
+            set {
+                this["a"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Raised")]
+        public global::System.Windows.Forms.DataGridViewCellBorderStyle b {
+            get {
+                return ((global::System.Windows.Forms.DataGridViewCellBorderStyle)(this["b"]));
+            }
+            set {
+                this["b"] = value;
+            }
+        }
     }
 }

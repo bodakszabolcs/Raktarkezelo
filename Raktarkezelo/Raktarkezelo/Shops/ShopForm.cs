@@ -10,7 +10,8 @@ using System.Windows.Forms;
 using DevComponents.DotNetBar.Metro;
 using Raktarkezelo.DataBase;
 using Raktarkezelo.Shops;
-
+using DevComponents.DotNetBar;
+    
 namespace Raktarkezelo
 {
     public partial class ShopForm : MetroForm
@@ -25,7 +26,7 @@ namespace Raktarkezelo
 
         private void Shop_Load(object sender, EventArgs e)
         {
-
+           
         }
 
         private void buttonX3_Click(object sender, EventArgs e)

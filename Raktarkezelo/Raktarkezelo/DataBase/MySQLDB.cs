@@ -175,6 +175,7 @@ namespace Raktarkezelo.DataBase
         catch (Exception ex)
         {
             MessageBox.Show(ex.Message);
+            this.CloseConnection();
             return 0;
         }
     }
@@ -193,13 +194,38 @@ namespace Raktarkezelo.DataBase
                     catch (Exception ex)
                     {
                         MessageBox.Show(ex.Message);
+                        this.CloseConnection();
                         return null;
                     }
                     BindingSource bSource = new BindingSource();
                     bSource.DataSource = table;
-                    return  bSource;
+                    this.CloseConnection();
+            return  bSource;
+
     
-    }
+      }
+        public System.Data.DataTable selectTable(string query)
+        {
+            MySqlDataAdapter MyDA = new MySqlDataAdapter();
+            MyDA.SelectCommand = new MySqlCommand(query, connection);
+            System.Data.DataTable table = new System.Data.DataTable();
+            try
+            {
+
+                MyDA.Fill(table);
+                this.CloseConnection();
+                return table;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                this.CloseConnection();
+                return null;
+                
+            }
+            
+        }
 
    
 

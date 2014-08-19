@@ -13,13 +13,17 @@ using DevComponents.DotNetBar;
 using MySql.Data.MySqlClient;
 using Raktarkezelo.DataBase;
 using Raktarkezelo.User;
+using DevComponents.DotNetBar.Metro;
+using Raktarkezelo.Dictionerys;
 
 
 namespace Raktarkezelo
 {
-    public partial class Raktarkezelo : Office2007Form
+    public partial class Raktarkezelo : MetroForm
+
     {
         MySQLDB conn = new MySQLDB();
+
         public Raktarkezelo()
         {
             InitializeComponent();
@@ -28,7 +32,8 @@ namespace Raktarkezelo
             if (conn.OpenConnection() == true)
             {
                 dataGridViewX1.DataSource = conn.GetDataGried("select * from shop_phone");
-
+               
+                
                 //close connection
                 conn.CloseConnection();
             }
@@ -39,7 +44,8 @@ namespace Raktarkezelo
         private void Raktarkezelo_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'dS_BOLT.arpadhid' table. You can move, or remove it, as needed.
-
+            dataGridViewX1.ColumnHeadersDefaultCellStyle.BackColor = Color.Blue;
+            dataGridViewX1.EnableHeadersVisualStyles = false;
            
 
         }
@@ -53,10 +59,7 @@ namespace Raktarkezelo
 
        
 
-        private void dataGridViewX1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
-        }
+      
 
         private void buttonX1_Click(object sender, EventArgs e)
         {
@@ -73,12 +76,7 @@ namespace Raktarkezelo
             }
         }
 
-        private void dataGridViewX1_SelectionChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridViewX1_CellClick(object sender, DataGridViewCellEventArgs e)
+              private void dataGridViewX1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex > 0)
             {
@@ -107,21 +105,27 @@ namespace Raktarkezelo
 
         private void buttonX1_Click_1(object sender, EventArgs e)
         {
-
-            XElement root = XElement.Load("adatbazis.xml");
-            IEnumerable<XElement> address =
-                from el in root.Elements("telefon")
-                where el.Element("name").Value == lb_marka.Text
-                select el;
-            dataGridViewX2.Rows.Clear();
-            foreach (XElement el in address)
+            try
             {
-                foreach (XElement i in el.Elements())
+                XElement root = XElement.Load("adatbazis.xml");
+                IEnumerable<XElement> address =
+                    from el in root.Elements("telefon")
+                    where el.Element("name").Value == lb_marka.Text
+                    select el;
+                dataGridViewX2.Rows.Clear();
+                foreach (XElement el in address)
                 {
-                    dataGridViewX2.Rows.Add(new object[] { i.Name, i.Value });
+                    foreach (XElement i in el.Elements())
+                    {
+                        dataGridViewX2.Rows.Add(new object[] { i.Name, i.Value });
 
 
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
             
         }
@@ -190,6 +194,28 @@ namespace Raktarkezelo
                 conn.CloseConnection();
             }
         }
+
+        private void buttonX2_Click(object sender, EventArgs e)
+        {
+            Add_product adprod = new Add_product();
+            adprod.ShowDialog();
+        }
+
+              
+        private void szótárToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            Dictionery ds = new Dictionery();
+            ds.ShowDialog();
+        }
+
+        private void dataGridViewX1_Scroll(object sender, ScrollEventArgs e)
+        {
+
+        }
+
+      
+
+        
 
         
 

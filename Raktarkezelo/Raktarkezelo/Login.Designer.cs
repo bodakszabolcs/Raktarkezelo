@@ -45,8 +45,8 @@
             this.customValidator3 = new DevComponents.DotNetBar.Validator.CustomValidator();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.highlighter1 = new DevComponents.DotNetBar.Validator.Highlighter();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.styleManager1 = new DevComponents.DotNetBar.StyleManager(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.gp_login.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -54,12 +54,19 @@
             // 
             // tb_userName
             // 
-            this.tb_userName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.tb_userName.BackColor = System.Drawing.Color.White;
             // 
             // 
             // 
+            this.tb_userName.Border.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.tb_userName.Border.BorderBottomColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarCaptionBackground;
+            this.tb_userName.Border.BorderBottomWidth = 1;
+            this.tb_userName.Border.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.tb_userName.Border.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.tb_userName.Border.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
             this.tb_userName.Border.Class = "TextBoxBorder";
             this.tb_userName.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_userName.DisabledBackColor = System.Drawing.Color.White;
             this.tb_userName.ForeColor = System.Drawing.Color.Black;
             this.tb_userName.Location = new System.Drawing.Point(6, 33);
             this.tb_userName.Name = "tb_userName";
@@ -73,6 +80,7 @@
             // 
             this.lb_userName.AutoSize = true;
             this.lb_userName.BackColor = System.Drawing.Color.Transparent;
+            this.lb_userName.ForeColor = System.Drawing.Color.Black;
             this.lb_userName.Location = new System.Drawing.Point(3, 17);
             this.lb_userName.Name = "lb_userName";
             this.lb_userName.Size = new System.Drawing.Size(81, 13);
@@ -82,6 +90,8 @@
             // lb_pwd
             // 
             this.lb_pwd.AutoSize = true;
+            this.lb_pwd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.lb_pwd.ForeColor = System.Drawing.Color.Black;
             this.lb_pwd.Location = new System.Drawing.Point(3, 67);
             this.lb_pwd.Name = "lb_pwd";
             this.lb_pwd.Size = new System.Drawing.Size(36, 13);
@@ -90,12 +100,19 @@
             // 
             // tb_pwd
             // 
-            this.tb_pwd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.tb_pwd.BackColor = System.Drawing.Color.White;
             // 
             // 
             // 
+            this.tb_pwd.Border.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.tb_pwd.Border.BorderBottomColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarCaptionBackground;
+            this.tb_pwd.Border.BorderBottomWidth = 1;
+            this.tb_pwd.Border.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.tb_pwd.Border.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.tb_pwd.Border.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
             this.tb_pwd.Border.Class = "TextBoxBorder";
             this.tb_pwd.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.tb_pwd.DisabledBackColor = System.Drawing.Color.White;
             this.tb_pwd.ForeColor = System.Drawing.Color.Black;
             this.tb_pwd.Location = new System.Drawing.Point(6, 83);
             this.tb_pwd.Name = "tb_pwd";
@@ -109,8 +126,8 @@
             // 
             // gp_login
             // 
-            this.gp_login.BackColor = System.Drawing.Color.Transparent;
-            this.gp_login.CanvasColor = System.Drawing.SystemColors.Control;
+            this.gp_login.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.gp_login.CanvasColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.gp_login.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.gp_login.Controls.Add(this.bt_Cancel);
             this.gp_login.Controls.Add(this.bt_login);
@@ -118,6 +135,7 @@
             this.gp_login.Controls.Add(this.lb_pwd);
             this.gp_login.Controls.Add(this.tb_userName);
             this.gp_login.Controls.Add(this.tb_pwd);
+            this.gp_login.DisabledBackColor = System.Drawing.Color.Empty;
             this.gp_login.Location = new System.Drawing.Point(206, 12);
             this.gp_login.Name = "gp_login";
             this.gp_login.Size = new System.Drawing.Size(200, 198);
@@ -129,7 +147,8 @@
             this.gp_login.Style.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.gp_login.Style.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
             this.gp_login.Style.BorderBottomWidth = 1;
-            this.gp_login.Style.BorderColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.gp_login.Style.BorderColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarCaptionBackground;
+            this.gp_login.Style.BorderColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemPressedBackground;
             this.gp_login.Style.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
             this.gp_login.Style.BorderLeftWidth = 1;
             this.gp_login.Style.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
@@ -154,11 +173,10 @@
             // bt_Cancel
             // 
             this.bt_Cancel.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.bt_Cancel.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.bt_Cancel.Location = new System.Drawing.Point(101, 127);
             this.bt_Cancel.Name = "bt_Cancel";
             this.bt_Cancel.Size = new System.Drawing.Size(75, 23);
-            this.bt_Cancel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.bt_Cancel.Style = DevComponents.DotNetBar.eDotNetBarStyle.OfficeMobile2014;
             this.bt_Cancel.TabIndex = 5;
             this.bt_Cancel.Text = "Mégse";
             this.bt_Cancel.Click += new System.EventHandler(this.bt_Cancel_Click);
@@ -166,11 +184,10 @@
             // bt_login
             // 
             this.bt_login.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.bt_login.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.bt_login.Location = new System.Drawing.Point(6, 127);
             this.bt_login.Name = "bt_login";
             this.bt_login.Size = new System.Drawing.Size(75, 23);
-            this.bt_login.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.bt_login.Style = DevComponents.DotNetBar.eDotNetBarStyle.OfficeMobile2014;
             this.bt_login.TabIndex = 4;
             this.bt_login.Text = "Belépés";
             this.bt_login.Click += new System.EventHandler(this.bt_login_Click);
@@ -183,6 +200,7 @@
             // 
             this.lb_login.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.lb_login.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lb_login.ForeColor = System.Drawing.Color.Black;
             this.lb_login.Location = new System.Drawing.Point(12, 12);
             this.lb_login.Name = "lb_login";
             this.lb_login.Size = new System.Drawing.Size(75, 23);
@@ -227,8 +245,16 @@
             // 
             this.highlighter1.ContainerControl = this;
             // 
+            // styleManager1
+            // 
+            this.styleManager1.ManagerColorTint = System.Drawing.Color.CornflowerBlue;
+            this.styleManager1.ManagerStyle = DevComponents.DotNetBar.eStyle.Office2013;
+            this.styleManager1.MetroColorParameters = new DevComponents.DotNetBar.Metro.ColorTables.MetroColorGeneratorParameters(System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242))))), System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(140)))), ((int)(((byte)(63))))));
+            // 
             // pictureBox1
             // 
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.pictureBox1.ForeColor = System.Drawing.Color.Black;
             this.pictureBox1.Image = global::Raktarkezelo.Properties.Resources.login;
             this.pictureBox1.Location = new System.Drawing.Point(12, 48);
             this.pictureBox1.Name = "pictureBox1";
@@ -237,9 +263,6 @@
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
-            // styleManager1
-            // 
-             // 
             // Login
             // 
             this.AcceptButton = this.bt_login;
